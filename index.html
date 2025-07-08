@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мой путь к программисту — стиль 2005 & Эпик</title>
+
+    <style>
+        /* === Основной фон и стили === */
+        body {
+            margin: 0; padding: 0;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background: #000 url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            color: #00FF00;
+            text-align: center;
+            user-select: none;
+            overflow-x: hidden;
+        }
+
+        /* Мигающие заголовки */
+        h1, h2 {
+            animation: bling 1.5s infinite alternate;
+            text-shadow:
+                    0 0 5px #ff00ff,
+                    0 0 10px #ff00ff,
+                    0 0 20px #ff00ff,
+                    0 0 30px #ff00ff;
+        }
+        h1 {
+            font-size: 8vw;
+            margin: 1rem 0 0.5rem 0;
+            color: yellow;
+            text-shadow:
+                    2px 2px 5px red,
+                    0 0 10px yellow,
+                    0 0 20px orange;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 28px;
+            margin: 2rem 0 1rem 0;
+            color: #0ff;
+            font-weight: bold;
+        }
+
+        @keyframes bling {
+            0% { color: #FF00FF; }
+            50% { color: #00FFFF; }
+            100% { color: #FF00FF; }
+        }
+
+        /* Бегущие строки */
+        marquee {
+            font-weight: bold;
+            text-shadow: 0 0 8px #ff0000;
+            padding: 0.5rem 0;
+        }
+        #marquee1 {
+            background: #ff0000;
+            color: yellow;
+        }
+        #marquee2 {
+            background: #0000ff;
+            color: cyan;
+            font-size: 1.3rem;
+        }
+        #marquee3 {
+            background: #00aa00;
+            color: lime;
+            font-size: 1.1rem;
+        }
+
+        /* Таблица с этапами */
+        table {
+            border: 5px double lime;
+            background-color: #000000cc;
+            margin: 1rem auto;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 0 25px lime;
+        }
+        td {
+            padding: 12px;
+            border: 2px dashed lime;
+            font-size: 1.3rem;
+            transition: background-color 0.3s ease;
+        }
+        td:hover {
+            background-color: #003300cc;
+        }
+
+        /* Ссылки */
+        a {
+            color: aqua;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        a:hover {
+            color: yellow;
+            text-decoration: underline;
+            text-shadow: 0 0 12px yellow;
+        }
+
+        /* Кнопки */
+        .button {
+            background: linear-gradient(145deg, #ffee00, #ddbb00);
+            padding: 14px 35px;
+            border: 5px outset red;
+            font-size: 20px;
+            margin: 2rem 0;
+            cursor: pointer;
+            box-shadow: 0 0 20px yellow;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+        }
+        .button:hover {
+            background: linear-gradient(145deg, #ffdd00, #ccaa00);
+            box-shadow: 0 0 40px yellow;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 40px yellow; }
+            50% { box-shadow: 0 0 60px yellow; }
+        }
+
+        /* Текстовые блоки - секции */
+        .section {
+            max-width: 900px;
+            background-color: #111;
+            border: 4px solid lime;
+            padding: 1.5rem 2.5rem;
+            margin: 2rem auto;
+            box-shadow: 0 0 35px lime;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #00ff00;
+        }
+        .section p {
+            text-indent: 2em;
+        }
+        .section strong {
+            color: yellow;
+            text-shadow: 0 0 8px yellow;
+        }
+
+        /* Футер */
+        .footer {
+            font-size: 14px;
+            margin: 3rem 0 2rem 0;
+            color: lime;
+            text-shadow: 0 0 12px lime;
+            font-weight: bold;
+        }
+
+        /* Дополнительные эффекты */
+        .glow-text {
+            color: #00ff00;
+            text-shadow:
+                    0 0 5px #00ff00,
+                    0 0 10px #00ff00,
+                    0 0 20px #00ff00,
+                    0 0 30px #00ff00;
+            animation: pulse-green 2s infinite alternate;
+        }
+        @keyframes pulse-green {
+            0% { text-shadow: 0 0 5px #00ff00; }
+            100% { text-shadow: 0 0 20px #00ff00; }
+        }
+
+        /* Мигающие кнопки */
+        .blink-button {
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { box-shadow: 0 0 15px yellow; }
+            50% { box-shadow: 0 0 40px yellow; }
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 14vw;
+            }
+            table td {
+                font-size: 1rem;
+                padding: 10px;
+            }
+            .section {
+                font-size: 1rem;
+                padding: 1rem 1.5rem;
+            }
+            .button {
+                font-size: 18px;
+                padding: 12px 28px;
+            }
+        }
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 18vw;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            .button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Музыка -->
+<audio autoplay loop>
+    <source src="https://www.vgmusic.com/music/console/nintendo/nes/Tetris_theme.mid" type="audio/midi">
+</audio>
+
+<!-- Несколько бегущих строк -->
+<marquee id="marquee1" scrollamount="10" behavior="alternate">
+    💾 С ДНЁМ РОЖДЕНИЯ, ВАДИМ! ТЫ — ЛЕГЕНДА! 💾
+</marquee>
+<marquee id="marquee2" scrollamount="6" behavior="scroll" direction="left">
+    ⭐ ПОЗДРАВЛЯЕМ С УСПЕХАМИ В ПРОГРАММИРОВАНИИ! ⭐
+</marquee>
+<marquee id="marquee3" scrollamount="8" behavior="scroll" direction="right">
+    🚀 Вперёд к новым вершинам! Учись, твори, удивляй! 🚀
+</marquee>
+
+<h1 class="glow-text">МОЙ ПУТЬ К ПРОГРАММИСТУ</h1>
+
+<table>
+    <tr><td><b>📘 Этап 1:</b></td><td>Изучение основ HTML. Рисовал сайты в Блокноте с 0.</td></tr>
+    <tr><td><b>📗 Этап 2:</b></td><td>Открытие для себя CSS. Сделал сайты ярче и красивее.</td></tr>
+    <tr><td><b>📙 Этап 3:</b></td><td>Погружение в JavaScript. Прошел курс на Хекслете.</td></tr>
+    <tr><td><b>📕 Этап 4:</b></td><td>Изучение React и создание интерактивных интерфейсов.</td></tr>
+    <tr><td><b>📒 Этап 5:</b></td><td>Первые фриланс-заказы на Fiverr. Практика и рост.</td></tr>
+    <tr><td><b>📔 Этап 6:</b></td><td>Погружение в бэкенд. Начал изучать Node.js и базы данных.</td></tr>
+    <tr><td><b>📓 Цель:</b></td><td>Стать топовым фронтенд-мастером и получить стабильный доход.</td></tr>
+</table>
+
+<button class="button blink-button" title="Добавить в избранное" onclick="alert('Добавь сайт в избранное!')">
+    ⭐ Добавить в избранное
+</button>
+
+<div class="section">
+    <h2>💡 Моя история</h2>
+    <p>
+        <strong>12 лет назад</strong> я впервые открыл блокнот и начал писать код. Я понятия не имел, что делаю, но меня манили мигающие курсоры и экраны.
+    </p>
+    <p>
+        Всё было сложно: я не понимал, зачем нужны теги, думал, что сервер — это магическая коробка. Но <strong>желание учиться</strong и открывать новое было сильнее!
+    </p>
+    <p>
+        Со временем я научился создавать простые сайты на HTML, украшать их с помощью CSS и оживлять через JavaScript. Каждый новый проект — маленькое приключение и шаг к мечте.
+    </p>
+    <p>
+        В 16 лет я стал преподавать программирование подросткам. Это помогло не только мне, но и многим другим раскрыть мир технологий.
+    </p>
+    <p>
+        Сейчас я развиваюсь как фронтенд-разработчик, изучаю React, бэкенд и дизайн. Стремлюсь создавать крутые проекты и помогать заказчикам.
+    </p>
+    <p>
+        <strong>Главный урок:</strong> начать можно с нуля — без денег, связей и идеальных условий. Главное — не останавливаться и идти к цели!
+    </p>
+</div>
+
+<div class="section">
+    <h2>🛠 Технологии, которые я изучил</h2>
+    <ul style="color:#0f0; font-weight:bold; text-shadow: 0 0 6px #0f0; font-size:1.1rem;">
+        <li>HTML5 и CSS3</li>
+        <li>JavaScript (ES6+)</li>
+        <li>React и Redux</li>
+        <li>Node.js и Express</li>
+        <li>Git и GitHub</li>
+        <li>Webpack и Babel</li>
+        <li>Базы данных: MongoDB, PostgreSQL</li>
+        <li>Figma — дизайн интерфейсов</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>📚 Советы новичкам</h2>
+    <p>Не бойтесь ошибаться — ошибки это часть обучения.</p>
+    <p>Регулярно практикуйтесь и делайте маленькие проекты.</p>
+    <p>Читайте статьи, смотрите видео и участвуйте в сообществах.</p>
+    <p>Не гнаться за трендами, а понимать основы хорошо.</p>
+    <p>Учитесь объяснять — это прокачивает знания.</p>
+</div>
+
+<div class="footer">
+    <p>&copy; Вадим, 2005 | Сделано в стиле WinXP Internet 🌐</p>
+    <p><blink>YOU ARE VISITOR #1</blink></p>
+</div>
+
+<script>
+    // Звуковой эффект "бип" при наведении на кнопку (web beep)
+    const button = document.querySelector('.button');
+    button.addEventListener('mouseenter', () => {
+        const context = new (window.AudioContext || window.webkitAudioContext)();
+        const o = context.createOscillator();
+        const g = context.createGain();
+        o.type = 'square';
+        o.frequency.setValueAtTime(440, context.currentTime);
+        o.connect(g);
+        g.connect(context.destination);
+        o.start();
+        g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 0.1);
+        o.stop(context.currentTime + 0.1);
+    });
+</script>
+
+</body>
+</html>
