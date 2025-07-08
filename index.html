@@ -293,8 +293,27 @@
     <p>&copy; Вадим, 2005 | Сделано в стиле WinXP Internet 🌐</p>
     <p><blink>YOU ARE VISITOR #1</blink></p>
 </div>
-
+<button id="toggleFontsBtn" class="button" title="Отключить кастомные шрифты">
+  🚫 Отключить шрифты
+</button>
 <script>
+    const btn = document.getElementById('toggleFontsBtn');
+      let fontsDisabled = false;
+    
+      btn.addEventListener('click', () => {
+        if (!fontsDisabled) {
+          // Убираем кастомный font-family для всех элементов
+          document.body.style.fontFamily = 'system-ui, sans-serif';
+          // Можно также для всех элементов, но это будет дорого — для простоты body достаточно
+          btn.textContent = '✅ Шрифты отключены';
+          fontsDisabled = true;
+        } else {
+          // Вернуть кастомный шрифт (тот, что в CSS)
+          document.body.style.fontFamily = '"Comic Sans MS", cursive, sans-serif';
+          btn.textContent = '🚫 Отключить шрифты';
+          fontsDisabled = false;
+        }
+      });
     // Звуковой эффект "бип" при наведении на кнопку (web beep)
     const button = document.querySelector('.button');
     button.addEventListener('mouseenter', () => {
